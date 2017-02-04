@@ -41,7 +41,7 @@ $$(document).on('deviceready', function() {
 		
 		navigator.globalization.getPreferredLanguage(
 			function (language) {
-				alert('language: ' + language.value + '\n');
+		
 				lang= language.value;
 			},
 			function () {
