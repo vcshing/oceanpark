@@ -81,7 +81,9 @@ body.views
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">MTR</div>
+                    <div class="center sliding"><div class="button" style="width:200px">En</div><div class="button" style="width:200px">Chi</div></div>
+			
+					
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -99,7 +101,7 @@ body.views
                     <div class="page-content">
                        
 							<div class="pinch-zoom">
-								<img id="img1" src="routemap.png"/>
+								
 							</div>
 			
 						
@@ -131,15 +133,21 @@ body.views
 		navigator.globalization.getPreferredLanguage(
 			function (language) {
 				alert('language: ' + language.value + '\n');
+				
+				if(language.indexOf("zh") > -1 ){
+					$(".pinch-zoom").html("<img src=\"image/tc.jpg\"/>");
+				}else{
+					$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
+				}
 			},
 			function () {
-				alert('Error getting language\n');
+				$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
 			}
+			
 		);
-          //  $('div.pinch-zoom').each(function () {
-          //      new RTP.PinchZoom($(this), {});
-          //  });
-
+		$('div.pinch-zoom').each(function () {
+			new RTP.PinchZoom($(this), {});
+		});
 		//document.addEventListener("online", onOnline, false);
 
 		//function onOnline() {
