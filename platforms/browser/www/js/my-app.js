@@ -38,7 +38,21 @@ $$(document).on('deviceready', function() {
 	//navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 	
 	
-	
+		navigator.globalization.getPreferredLanguage(
+			function (language) {
+				alert('language: ' + language.value + '\n');
+				
+				if(language.indexOf("zh") > -1 ){
+					$(".pinch-zoom").html("<img src=\"image/tc.jpg\"/>");
+				}else{
+					$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
+				}
+			},
+			function () {
+				$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
+			}
+			
+		);
 
 	
 });
