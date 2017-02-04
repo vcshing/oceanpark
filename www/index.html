@@ -129,20 +129,9 @@ body.views
 
 
 	$(function(){
-		alert(lang);
-		if(typeof(lang)=="undefined"){
-			var lang ="zh";
-		}
-		if(lang.indexOf("zh") > -1 ){
-			$(".pinch-zoom").html("<img src=\"image/tc.jpg\"/>");
-		}else{
-			$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
-		}
-	
+
 			
-		$('div.pinch-zoom').each(function () {
-			new RTP.PinchZoom($(this), {});
-		});
+
 		//document.addEventListener("online", onOnline, false);
 
 		//function onOnline() {
@@ -151,9 +140,7 @@ body.views
 		//  })
 		//}
 		  
-		    $('div.pinch-zoom').each(function () {
-                new RTP.PinchZoom($(this), {});
-            });
+	
 			
 		$(".onoffswitch-label").bind("click",function(){
 			if($(".onoffswitch-checkbox").is(':checked')=== true){

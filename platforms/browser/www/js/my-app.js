@@ -48,7 +48,16 @@ $$(document).on('deviceready', function() {
 				lang= "en";
 			}
 		);
+		
+		if(lang.indexOf("zh") > -1 ){
+			$(".pinch-zoom").html("<img src=\"image/tc.jpg\"/>");
+		}else{
+			$(".pinch-zoom").html("<img src=\"image/en.jpg\"/>");
+		}
 
+		$('div.pinch-zoom').each(function () {
+                new RTP.PinchZoom($(this), {});
+        });
 	
 });
 
